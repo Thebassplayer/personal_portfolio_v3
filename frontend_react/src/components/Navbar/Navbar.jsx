@@ -9,7 +9,14 @@ import "./Navbar.scss";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
-  const navbarButtons = ["home", "about", "work", "skill", "contact"];
+  const navbarButtons = [
+    "home",
+    "about",
+    "work",
+    "skill",
+    "testimonials",
+    "contact",
+  ];
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
