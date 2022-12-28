@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { urlFor, client } from "../../client";
 import { motion } from "framer-motion";
 
+import { AppWrap } from "../../wrapper";
+
 import "./About.scss";
-import { urlFor, client } from "../../client";
 
 const About = () => {
   const [abouts, setAbouts] = useState([]);
@@ -20,8 +22,10 @@ const About = () => {
   return (
     <>
       <h2 className="head-text">
-        I Know that <span>Good Design</span> <br />
-        means <span>Good Business</span>
+        <span>Good Design</span> <br />
+        means
+        <br />
+        <span>Good Business</span>
       </h2>
 
       <div className="app__profiles">
@@ -47,4 +51,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AppWrap(About, "about");

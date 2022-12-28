@@ -89,6 +89,7 @@
   justify-content: center;
   align-items: center;
   background: var(--secondary-color);
+  cursor: pointer;
 
   svg {
     width: 70%;
@@ -119,11 +120,14 @@
 
     box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
 
+    cursor: auto;
+
     svg {
       width: 35px;
       height: 35px;
       color: var(--secondary-color);
       margin: 0.5rem 1rem;
+      cursor: pointer;
     }
 
     ul {
