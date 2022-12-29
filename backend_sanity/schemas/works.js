@@ -14,6 +14,12 @@ export default {
       title: 'Description',
       type: 'string',
     },
+
+    {
+      name: 'role',
+      title: 'Role in the Project',
+      type: 'string',
+    },
     {
       name: 'projectLink',
       title: 'Project Link',
