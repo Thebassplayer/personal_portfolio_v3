@@ -18,7 +18,9 @@ const NavigationDots = ({ active }) => {
           key={item + index}
           className="app__navigation-dot"
           onClick={() => setToggle(false)}
-          style={active === item ? { backgroundColor: "#313BAC" } : {}}
+          style={
+            active === item ? { backgroundColor: "var(--secondary-color)" } : {}
+          }
         />
       ))}
     </div>
