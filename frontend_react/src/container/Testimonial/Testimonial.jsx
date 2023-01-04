@@ -69,7 +69,7 @@ const Testimonial = () => {
           </div>
         </>
       )}
-      <div className="app__testimonials-brands app__flex">
+      <div className="app__testimonial-brands app__flex">
         {brands.map(brand => (
           <motion.div
             whileInView={{ opasity: [0, 1] }}

@@ -5,7 +5,7 @@ const navbarButtons = [
   "about",
   "work",
   "skills",
-  "testimonials",
+  "testimonial",
   "contact",
 ];
 
