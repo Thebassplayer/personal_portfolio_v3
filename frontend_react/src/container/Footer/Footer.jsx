@@ -26,7 +26,7 @@ const Footer = () => {
     setLoading(true);
 
     const contact = {
-      _type: "CONTACT",
+      _type: "contact",
       name: name,
       email: email,
       message: message,
@@ -80,7 +80,7 @@ const Footer = () => {
             ></textarea>
           </div>
           <button type="button" className="p-text" onClick={handleSubmit}>
-            {loading ? "Sending" : "Send Message"}
+            {loading ? "Sending..." : "Send Message"}
           </button>
         </div>
       ) : (
