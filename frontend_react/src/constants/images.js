@@ -22,7 +22,6 @@ import logo from "../assets/logo.png";
 
 export default {
   email,
-  mobile,
   css,
   git,
   html,
