@@ -4,7 +4,7 @@
   --font-base: "DM Sans", sans-serif;
 
   --primary-color: #edf2f8;
-  --secondary-color: rgb(0, 114, 21);
+  --secondary-color: #313bac;
   --black-color: #030303;
   --lightGray-color: #e4e4e4;
   --gray-color: #6b7688;
@@ -12,9 +12,7 @@
   --white-color: #ffffff;
 }
 
-*,
-*::after,
-*::before {
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
