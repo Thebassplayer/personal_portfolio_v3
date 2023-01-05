@@ -38,20 +38,21 @@
   }
 }
 
-.copyright {
-  width: 100%;
-  padding: 2rem 0 0;
+//TODO: remove this
+// .copyright {
+//   width: 100%;
+//   padding: 2rem 0 0;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-end;
+//   align-items: flex-end;
 
-  p {
-    text-transform: uppercase;
-    color: var(--black-color);
-  }
-}
+//   p {
+//     text-transform: uppercase;
+//     color: var(--black-color);
+//   }
+// }
 
 .head-text {
   font-size: 2.75rem;
@@ -184,7 +185,8 @@
     display: none;
   }
 
-  .copyright {
-    padding: 2rem;
-  }
+  //TODO: remove this
+  // .copyright {
+  //   padding: 2rem;
+  // }
 }

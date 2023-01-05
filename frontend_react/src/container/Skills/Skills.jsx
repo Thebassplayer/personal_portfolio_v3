@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Tooltip } from "react-tooltip";
-import "react-tooltip/dist/react-tooltip.css";
+// import { Tooltip } from "react-tooltip";
+// import "react-tooltip/dist/react-tooltip.css";
 
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
@@ -63,7 +63,7 @@ const Skills = () => {
                       <h4 className="bold-text">{work.name}</h4>
                       <p className="p-text">{work.company}</p>
                     </motion.div>
-                    <Tooltip anchorId={work.name} className="skills-tooltip" />
+                    {/* <Tooltip anchorId={work.name} className="skills-tooltip" /> */}
                   </div>
                 ))}
               </motion.div>
