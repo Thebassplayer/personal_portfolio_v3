@@ -40,12 +40,12 @@ const Footer = () => {
     <>
       <h2 className="head-text">Contact me!</h2>
       <div className="app__footer-cards">
-        <div className="app__footer-card">
-          <img src={images.email} alt="email" />
-          <a href="mailto:roylopezdev@gmail.com" className="p-text">
-            roylopezdev@gmail.com
-          </a>
-        </div>
+        <a href="mailto:roylopezdev@gmail.com" className="p-text">
+          <div className="app__footer-card">
+            <img src={images.email} alt="email" />
+            <span>roylopezdev@gmail.com</span>
+          </div>
+        </a>
       </div>
 
       {!isFormSubmitted ? (
