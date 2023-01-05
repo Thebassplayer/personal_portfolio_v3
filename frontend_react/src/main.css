@@ -12,11 +12,14 @@
   --white-color: #ffffff;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+  border: none;
 }
 
 body,
@@ -24,4 +27,13 @@ html {
   height: 100%;
   padding: 0;
   margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: none; /* for iOS Safari */
+  text-size-adjust: none; /* for other mobile browsers */
+}
+
+#root {
+  height: 100%;
 }
