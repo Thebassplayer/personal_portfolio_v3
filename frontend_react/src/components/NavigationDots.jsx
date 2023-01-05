@@ -9,21 +9,17 @@ const navbarButtons = [
   "contact",
 ];
 
-const NavigationDots = ({ active }) => {
-  return (
-    <div className="app__navigation">
-      {navbarButtons.map((item, index) => (
-        <a
-          href={`#${item}`}
-          key={item + index}
-          className="app__navigation-dot"
-          style={
-            active === item ? { backgroundColor: "var(--secondary-color)" } : {}
-          }
-        />
-      ))}
-    </div>
-  );
-};
+const NavigationDots = ({ active }) => (
+  <div className="app__navigation">
+    {navbarButtons.map((item, index) => (
+      <a
+        href={`#${item}`}
+        key={item + index}
+        className="app__navigation-dot"
+        style={active === item ? { backgroundColor: "#313BAC" } : {}}
+      />
+    ))}
+  </div>
+);
 
 export default NavigationDots;

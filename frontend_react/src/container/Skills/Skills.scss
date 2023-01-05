@@ -45,6 +45,7 @@
     width: 90px;
     height: 90px;
     border-radius: 50%;
+    background-color: #fef4f5;
 
     img {
       width: 50%;
@@ -52,7 +53,7 @@
     }
 
     &:hover {
-      box-shadow: 0 0 25px #fff;
+      box-shadow: 0 0 25px #fef4f5;
     }
 
     @media screen and (min-width: 2000px) {
@@ -78,10 +79,6 @@
       margin-top: 1rem;
     }
   }
-}
-
-.app__skills-item-circle {
-  background-color: var(--primary-color);
 }
 
 .app__skills-exp {
@@ -123,17 +120,19 @@
     p {
       font-weight: 400;
       color: var(--gray-color);
-      margin-top: 0.3rem;
+      margin-top: 5px;
     }
   }
 }
 
 .app__skills-exp-year {
   margin-right: 3rem;
+
   p {
     font-weight: 800;
     color: var(--secondary-color);
   }
+
   @media screen and (max-width: 450px) {
     margin-right: 1rem;
   }
