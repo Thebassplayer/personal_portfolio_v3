@@ -14,7 +14,7 @@ const Navbar = () => {
     "about",
     "work",
     "skills",
-    "testimonials",
+    "testimonial",
     "contact",
   ];
   return (
