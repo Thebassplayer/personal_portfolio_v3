@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { send } from "emailjs-com";
 
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
@@ -8,13 +9,18 @@ import "./Footer.scss";
 
 const Footer = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    from_name: "",
+    reply_to: "",
     message: "",
   });
+
+  // Component rendering logic
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const { name, email, message } = formData;
+
+  const { from_name, reply_to, message } = formData;
+
+  // populate formData with form values
   const handleChangeInput = e => {
     const { name, value } = e.target;
     setFormData({
@@ -25,17 +31,22 @@ const Footer = () => {
   const handleSubmit = () => {
     setLoading(true);
 
-    const contact = {
-      _type: "contact",
-      name: name,
-      email: email,
-      message: message,
-    };
-    client.create(contact).then(res => {
-      setLoading(false);
-      setIsFormSubmitted(true);
-    });
+    // emailjs send method
+    send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      formData,
+      import.meta.env.VITE_EMAILJS_USER_ID
+    )
+      .then(response => {
+        setLoading(false);
+        setIsFormSubmitted(true);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
+
   return (
     <>
       <h2 className="head-text">Contact me!</h2>
@@ -55,9 +66,9 @@ const Footer = () => {
               className="p-text"
               type="text"
               placeholder="Your name"
-              value={name}
+              value={from_name}
               onChange={handleChangeInput}
-              name="name"
+              name="from_name"
             />
           </div>
           <div className="app__flex">
@@ -65,9 +76,9 @@ const Footer = () => {
               className="p-text"
               type="email"
               placeholder="Your email"
-              value={email}
+              value={reply_to}
               onChange={handleChangeInput}
-              name="email"
+              name="reply_to"
             />
           </div>
           <div>
