@@ -9,56 +9,96 @@ import AnimatedBackground from "../../components/AnimatedBackground/AnimatedBack
 
 import "./Header.scss";
 
-const scaleVariants = {
-  whileInView: {
-    scale: [0, 1],
-    opacity: [0, 1],
+const container = {
+  hidden: { opacity: 0 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    transition: { staggerChildren: 0.12, delayChildren: 0.04 * i },
+  }),
+};
+
+const line = {
+  hidden: { opacity: 0 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    transition: { staggerChildren: 0.12, delayChildren: 0.04 * i },
+  }),
+};
+
+const character = {
+  visible: {
+    opacity: 1,
+    x: 0,
     transition: {
-      duration: 1.5,
-      ease: "easeInOut",
+      type: "spring",
+      damping: 12,
+      stiffness: 100,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    x: 20,
+    transition: {
+      type: "spring",
+      damping: 12,
+      stiffness: 100,
     },
   },
 };
 
 const Header = () => {
+  const text = ["DESIGN", "CODE", "DEPLOY", "AGAIN"];
+
   return (
     <div className="app__header app__flex">
       <AnimatedBackground />
+
       <motion.div
-        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.5 }}
-        className="app__header-info"
+        style={{
+          overflow: "hidden",
+          display: "flex",
+          fontSize: "2rem",
+          width: "100%",
+          height: "100%",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          margin: 0,
+          padding: 0,
+        }}
+        variants={container}
+        initial="hidden"
+        animate="visible"
       >
-        <div className="app__header-badge">
-          <div className="badge-cmp app__flex">
-            <span>👋</span>
-            <div style={{ marginLeft: 20 }}>
-              <p className="p-text">Hello, I am</p>
-              <h1 className="head-text">Roy</h1>
-            </div>
-          </div>
-          <div className="tag-cmp app__flex">
-            <p className="p-text">Web Developer</p>
-            <p className="p-text">Freelancer</p>
-          </div>
-        </div>
-      </motion.div>
-      <motion.div
-        whileInView={{ opacity: [0, 1] }}
-        transition={{ duration: 0.5, delayChildren: 0.5 }}
-        className="app__header-img"
-      >
-        <img src={images.profile} alt="profile_bg" />
-      </motion.div>
-      <motion.div
-        variants={scaleVariants}
-        whileInView={scaleVariants.whileInView}
-        className="app__header-circles"
-      >
-        {[images.javascript, images.react, images.css].map((circle, index) => (
-          <div className="circle-cmp app__flex" key={`circle-${index}`}>
-            <img src={circle} alt="circle" />
-          </div>
+        {text.map((word, i) => (
+          <motion.div
+            key={`${word}-${i}`}
+            style={{
+              overflow: "hidden",
+              display: "flex",
+              fontSize: "2rem",
+              width: "100%",
+              height: "100%",
+              justifyContent: "center",
+              margin: 0,
+              padding: 0,
+            }}
+            variants={line}
+            initial="hidden"
+            animate="visible"
+          >
+            {word.split("").map((char, index) => {
+              return (
+                <motion.span
+                  key={`${char}-${index}`}
+                  variants={character}
+                  className="app__header-main--text"
+                >
+                  {char}
+                </motion.span>
+              );
+            })}
+          </motion.div>
         ))}
       </motion.div>
     </div>

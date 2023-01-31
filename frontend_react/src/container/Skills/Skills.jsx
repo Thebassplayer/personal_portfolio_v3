@@ -63,7 +63,7 @@ const Skills = () => {
                       <h4 className="bold-text">{work.name}</h4>
                       <p className="p-text">{work.company}</p>
                     </motion.div>
-                    <Tooltip anchorId={work.name} className="skills-tooltip" />
+                    {/* <Tooltip anchorId={work.name} className="skills-tooltip" /> */}
                   </div>
                 ))}
               </motion.div>
