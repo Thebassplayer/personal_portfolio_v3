@@ -47,7 +47,7 @@ const character = {
 };
 
 const Header = () => {
-  const text = ["DESIGN", "CODE", "DEPLOY", "AGAIN"];
+  const text = ["DESIGN", "CODE", "DEPLOY", "REPEAT"];
 
   return (
     <div className="app__header app__flex">
