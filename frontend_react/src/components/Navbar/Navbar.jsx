@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { urlFor, client } from "../../client";
 
 import { images } from "../../constants";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
@@ -8,6 +9,15 @@ import "./Navbar.scss";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [resumeLink, setresumeLink] = useState("");
+
+  useEffect(() => {
+    const query = '*[_type == "resume"]';
+
+    client.fetch(query).then(data => {
+      setresumeLink(data[0].resumelink);
+    });
+  }, []);
 
   const navbarButtons = [
     "home",
@@ -31,6 +41,12 @@ const Navbar = () => {
             <a href={`#${item}`}>{item}</a>
           </li>
         ))}
+        <li className="app__flex p-text">
+          <div />
+          <a href={resumeLink} target="_blank">
+            resume
+          </a>
+        </li>
       </ul>
 
       <div className="app__navbar-menu">
