@@ -1,5 +1,4 @@
 .app__navbar {
-  position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -16,7 +15,6 @@
 }
 
 .app__navbar-logo {
-  position: absolute;
   top: 8px;
   left: 10px;
   display: flex;
