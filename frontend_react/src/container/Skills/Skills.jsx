@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Tooltip } from "react-tooltip";
-import "react-tooltip/dist/react-tooltip.css";
+// import { Tooltip } from "react-tooltip";
+// import "react-tooltip/dist/react-tooltip.css";
 
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
