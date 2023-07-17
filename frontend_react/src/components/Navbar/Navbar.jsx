@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 // Components
 import ButtonsMenuDesktop from "../ButtonsMenuDesktop/ButtonsMenuDesktop";
-import ButtonsMenuMobile from "./ButtonsMenuMobile";
+import ButtonsMenuMobile from "../ButtonsMenuMobile/ButtonsMenuMobile";
 // Constants
 import { urlFor, client } from "../../client";
 

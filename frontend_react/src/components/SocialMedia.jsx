@@ -1,37 +1,40 @@
 import React from "react";
+// Components
+import SocialButton from "./SocialButton/SocialButton";
 
 import { BsTwitter, BsLinkedin, BsGithub } from "react-icons/bs";
+
+const SocialMediaLinks = [
+  {
+    path: "https://twitter.com/roylopezdev",
+    icon: <BsTwitter />,
+    order: 3,
+  },
+  {
+    path: "https://www.linkedin.com/in/roylopezdev/",
+    icon: <BsLinkedin />,
+    order: 2,
+  },
+  {
+    path: "https://github.com/Thebassplayer",
+    icon: <BsGithub />,
+    order: 1,
+  },
+];
 
 const Socialmedia = () => {
   return (
     <div className="app__social">
-      <a
-        href="https://twitter.com/roylopezdev"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <div>
-          <BsTwitter />
-        </div>
-      </a>
-      <a
-        href="https://www.linkedin.com/in/roylopezdev/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <div>
-          <BsLinkedin />
-        </div>
-      </a>
-      <a
-        href="https://github.com/Thebassplayer"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <div>
-          <BsGithub />
-        </div>
-      </a>
+      {SocialMediaLinks.sort((a, b) => a.order - b.order).map(
+        ({ path, icon, order }, index) => (
+          <SocialButton
+            path={path}
+            icon={icon}
+            order={order}
+            key={`${order}-${index}`}
+          />
+        )
+      )}
     </div>
   );
 };

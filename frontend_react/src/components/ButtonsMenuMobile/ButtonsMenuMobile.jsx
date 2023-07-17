@@ -5,6 +5,8 @@ import Socialmedia from "../SocialMedia";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 // Frame Motion
 import { motion } from "framer-motion";
+// Styles
+import "./ButtonsMenuMobile.scss";
 
 const ButtonsMenuMobile = ({
   navbarButtons,
