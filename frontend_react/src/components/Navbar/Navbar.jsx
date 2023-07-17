@@ -26,6 +26,7 @@ const Navbar = () => {
     "skills",
     "testimonial",
     "contact",
+    "resume",
   ];
   return (
     <nav className="app__navbar">
@@ -37,16 +38,20 @@ const Navbar = () => {
       <ul className="app__navbar-links">
         {navbarButtons.map(item => (
           <li className="app__flex p-text" key={`link-${item}`}>
-            <div />
-            <a href={`#${item}`}>{item}</a>
+            {item === "resume" ? (
+              <a href={resumeLink} target="_blank">
+                {item}
+              </a>
+            ) : (
+              <a href={`#${item}`}>{item}</a>
+            )}
           </li>
         ))}
-        <li className="app__flex p-text">
-          <div />
+        {/* <li className="app__flex p-text">
           <a href={resumeLink} target="_blank">
             resume
           </a>
-        </li>
+        </li> */}
       </ul>
 
       <div className="app__navbar-menu">
@@ -61,9 +66,15 @@ const Navbar = () => {
             <ul>
               {navbarButtons.map(item => (
                 <li key={item}>
-                  <a href={`#${item}`} onClick={() => setToggle(false)}>
-                    {item}
-                  </a>
+                  {item === "resume" ? (
+                    <a href={resumeLink} target="_blank">
+                      {item}
+                    </a>
+                  ) : (
+                    <a href={`#${item}`} onClick={() => setToggle(false)}>
+                      {item}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
