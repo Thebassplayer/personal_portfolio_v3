@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // Components
-import ButtonsMenuDesktop from "./ButtonsMenuDesktop";
+import ButtonsMenuDesktop from "../ButtonsMenuDesktop/ButtonsMenuDesktop";
 import ButtonsMenuMobile from "./ButtonsMenuMobile";
 // Constants
 import { urlFor, client } from "../../client";

@@ -18,7 +18,7 @@ const ButtonsMenuMobile = ({
       {toggle && (
         <motion.div
           whileInView={{ x: [300, 0], opacity: [0, 1] }}
-          transition={{ duration: 0.3, ease: "easeIn" }}
+          transition={{ duration: 0.5, ease: "easeIn" }}
         >
           <HiX onClick={() => setToggle(false)} />
 
