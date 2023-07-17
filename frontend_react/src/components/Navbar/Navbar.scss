@@ -106,25 +106,23 @@
     top: 0;
     bottom: 0;
     right: 0;
-    z-index: 5;
+    z-index: 3;
 
     padding: 1rem;
     width: 80%;
     height: 100vh;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: flex-end;
     flex-direction: column;
 
     background: url("../../assets/bgWhite.png");
-    background-color: var(--white-color);
+    background-color: rgba(255, 255, 255, 0.95);
     background-size: cover;
     background-repeat: repeat;
 
     box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
-
-    cursor: auto;
 
     svg {
       width: 35px;
@@ -138,7 +136,7 @@
       list-style: none;
       margin: 0;
       padding: 0;
-      height: 100%;
+      // height: 100%;
       width: 100%;
       display: flex;
       justify-content: flex-start;
@@ -162,6 +160,10 @@
           }
         }
       }
+    }
+    div {
+      position: relative;
+      width: 100%;
     }
     @media screen and (min-width: 900px) {
       display: none;
