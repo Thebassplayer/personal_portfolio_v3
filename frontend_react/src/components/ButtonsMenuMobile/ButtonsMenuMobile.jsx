@@ -39,8 +39,7 @@ const ButtonsMenuMobile = ({
               </li>
             ))}
           </ul>
-
-          <Socialmedia />
+          <Socialmedia className="buttons__social" />
         </motion.div>
       )}
     </div>

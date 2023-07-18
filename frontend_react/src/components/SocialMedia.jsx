@@ -22,9 +22,9 @@ const SocialMediaLinks = [
   },
 ];
 
-const Socialmedia = () => {
+const Socialmedia = ({ className }) => {
   return (
-    <div className="app__social">
+    <div className={className}>
       {SocialMediaLinks.sort((a, b) => a.order - b.order).map(
         ({ path, icon, order }, index) => (
           <SocialButton
