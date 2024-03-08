@@ -17,7 +17,8 @@ const Work = () => {
     const query = '*[_type == "works"]| order(order)';
 
     client.fetch(query).then(data => {
-      setWorks(data);
+      const orderedWors = data.sort((a, b) => a.order - b.order);
+      setWorks(orderedWors);
       setFilterWork(data);
     });
   }, []);
